@@ -30,7 +30,7 @@ function App(): JSX.Element {
   } else {
     return(
       <View style={styles.text}>
-        <Text>HOWDY WORLD!</Text>
+        <Text>HAVE YOU EVER DRANK BAILEYS FROM A SHOE?</Text>
       </View>
     )
   }

@@ -4,7 +4,8 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
-import LottieAnimationView from 'lottie-react-native';
+
+import LottieView from 'lottie-react-native';
 
 interface SplashProps {
   setLoaded: (loaded: boolean) => void; 
@@ -15,13 +16,13 @@ const Splash = ({ setLoaded }: SplashProps) => {
  
     return(
       <View style={styles.splash}>
-        <LottieAnimationView source={require('../../../assets/animation/venuAnimation.json')}
+        <LottieView style={{flex: 1}} source={require('../../../assets/animation/venuAnimation.json')}
           autoPlay
           loop={false}
           resizeMode='cover'
           onAnimationFinish={() => {
             console.log('animation finished')
-            setLoaded(false)
+            setLoaded(true)
             
         }}
         />
