@@ -6,44 +6,27 @@
  */
 
 import React, {useState} from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-import Splash from './screens/SplashScreen/splash'
-
-
+import {StyleSheet, Text, View} from 'react-native';
+import Splash from './screens/SplashScreen/splash';
 
 function App(): JSX.Element {
-
   const [loaded, setLoaded] = useState<boolean>(false);
-  if (loaded == false) {
-    return(
-      <Splash setLoaded={setLoaded}/>
-    )      
+  if (loaded === false) {
+    return <Splash setLoaded={setLoaded} />;
   } else {
-    return(
+    return (
       <View style={styles.text}>
         <Text>HAVE YOU EVER DRANK BAILEYS FROM A SHOE?</Text>
       </View>
-    )
+    );
   }
-  
-  
-  
 }
 
 const styles = StyleSheet.create({
   text: {
     alignItems: 'center',
     marginTop: 100,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   sectionContainer: {
     marginTop: 32,
