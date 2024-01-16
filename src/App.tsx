@@ -16,7 +16,7 @@ function App(): JSX.Element {
   } else {
     return (
       <View style={styles.text}>
-        <Text>HAVE YOU EVER DRANK BAILEYS FROM A SHOE?</Text>
+        <Text>HAVE YOU EVER DRANBAILEYS FROM A SHOE?</Text>
       </View>
     );
   }
