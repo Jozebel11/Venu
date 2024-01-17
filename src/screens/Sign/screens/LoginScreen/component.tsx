@@ -1,34 +1,28 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import AuthButton from '../components/AuthButton';
-import { loginWithFacebook, loginWithGoogle } from '../api/AuthService';
+import {Button, View} from 'react-native';
+import * as AuthService from '../../../../api/AuthService/AuthService';
 
-function LoginScreen({ navigation }) {
-  const handleFacebookLogin = async () => {
-    try {
-      const token = await loginWithFacebook();
-      navigation.navigate('Profile', { token });
-    } catch (error) {
-      console.error(error);
+const LoginScreen = ({navigation}) => {
+  const handleGoogleSignIn = async () => {
+    const user = await AuthService.signInWithGoogle();
+    if (user) {
+      navigation.navigate('Profile'); // Navigate to profile after successful login
     }
   };
 
-  const handleGoogleLogin = async () => {
-    try {
-      const token = await loginWithGoogle();
-      navigation.navigate('Profile', { token });
-    } catch (error) {
-      console.error(error);
+  const handleFacebookSignIn = async () => {
+    const user = await AuthService.signInWithFacebook();
+    if (user) {
+      navigation.navigate('Profile'); // Navigate to profile after successful login
     }
   };
 
   return (
     <View>
-      <Text>Welcome to Venu</Text>
-      <AuthButton title="Login with Facebook" onPress={handleFacebookLogin} />
-      <AuthButton title="Login with Google" onPress={handleGoogleLogin} />
+      <Button title="Sign in with Google" onPress={handleGoogleSignIn} />
+      <Button title="Sign in with Facebook" onPress={handleFacebookSignIn} />
     </View>
   );
-}
+};
 
 export default LoginScreen;
