@@ -1,26 +1,12 @@
 import React from 'react';
 import {Button, View} from 'react-native';
-import * as AuthService from '../../../../api/AuthService/AuthService';
+import {signInWithGoogle, signInWithFacebook} from '../../../../api/AuthService/AuthService';
 
-const LoginScreen = ({navigation}: any) => {
-  const handleGoogleSignIn = async () => {
-    const user = await AuthService.signInWithGoogle();
-    if (user) {
-      navigation.navigate('Profile'); // Navigate to profile after successful login
-    }
-  };
-
-  const handleFacebookSignIn = async () => {
-    const user = await AuthService.signInWithFacebook();
-    if (user) {
-      navigation.navigate('Profile'); // Navigate to profile after successful login
-    }
-  };
-
+const LoginScreen = ({}: any) => {
   return (
-    <View>
-      <Button title="Sign in with Google" onPress={handleGoogleSignIn} />
-      <Button title="Sign in with Facebook" onPress={handleFacebookSignIn} />
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Button title="Sign in with Google" onPress={signInWithGoogle} />
+      <Button title="Sign in with Facebook" onPress={signInWithFacebook} />
     </View>
   );
 };
