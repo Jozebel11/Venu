@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, View} from 'react-native';
 import * as AuthService from '../../../../api/AuthService/AuthService';
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({navigation}: any) => {
   const handleGoogleSignIn = async () => {
     const user = await AuthService.signInWithGoogle();
     if (user) {

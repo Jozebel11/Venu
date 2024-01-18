@@ -29,7 +29,10 @@ export const signInWithGoogle = async () => {
 
 export const signInWithFacebook = async () => {
   try {
-    const result = await LoginManager.logInWithPermissions(['public_profile', 'email']);
+    const result = await LoginManager.logInWithPermissions([
+      'public_profile',
+      'email',
+    ]);
     if (result.isCancelled) {
       throw 'User cancelled the login process';
     }
