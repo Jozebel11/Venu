@@ -1,6 +1,9 @@
 import React from 'react';
 import {Button, View} from 'react-native';
-import {signInWithGoogle, signInWithFacebook} from '../../../../api/AuthService/AuthService';
+import {
+  signInWithGoogle,
+  signInWithFacebook,
+} from '../../../../api/AuthService/AuthService';
 
 const LoginScreen = ({}: any) => {
   return (
